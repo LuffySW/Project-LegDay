@@ -1,0 +1,6 @@
+opencv-python
+numpy
+mediapipe
+openni
+pyttsx3
+streamlit
