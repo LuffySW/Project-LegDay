@@ -33,8 +33,8 @@ st.markdown("""
     <style>
         /* Main theme colors */
         :root {
-            --primary-color: #FF4B4B;
-            --secondary-color: #0068C9;
+            --primary-color: #0068C9;
+            --secondary-color: #4FC3F7;
             --success-color: #00C853;
             --warning-color: #FF9800;
             --danger-color: #F44336;
@@ -48,7 +48,7 @@ st.markdown("""
         
         /* Header styling */
         .main-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
@@ -72,7 +72,7 @@ st.markdown("""
         
         /* Metric cards */
         .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%);
             padding: 1.5rem;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -140,12 +140,12 @@ st.markdown("""
         
         /* Sidebar styling */
         .css-1d391kg {
-            background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(180deg, #0068C9 0%, #4FC3F7 100%);
         }
         
         /* Stats section */
         .stats-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%);
             padding: 1rem;
             border-radius: 10px;
             text-align: center;
@@ -178,7 +178,7 @@ st.markdown("""
         /* Info boxes */
         .info-box {
             background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #0068C9;
             padding: 1rem;
             border-radius: 5px;
             margin: 1rem 0;
@@ -188,7 +188,7 @@ st.markdown("""
 
 # --- SIDEBAR ---
 st.sidebar.markdown("""
-    <div style='text-align: center; padding: 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; margin-bottom: 1rem;'>
+    <div style='text-align: center; padding: 1rem; background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%); border-radius: 10px; margin-bottom: 1rem;'>
         <h2 style='color: white; margin: 0;'>⚙️ Pengaturan</h2>
     </div>
 """, unsafe_allow_html=True)
@@ -196,7 +196,7 @@ st.sidebar.markdown("""
 st.sidebar.markdown(f"""
     <div class='info-box'>
         <strong>🖥️ Sistem Operasi:</strong><br>
-        <span style='color: #667eea; font-weight: bold;'>{OS_NAME}</span>
+        <span style='color: #4FC3F7; font-weight: bold;'>{OS_NAME}</span>
     </div>
 """, unsafe_allow_html=True)
 
@@ -216,7 +216,7 @@ else:
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
     <div style='text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px;'>
-        <h4 style='color: #667eea; margin-bottom: 0.5rem;'>📖 Panduan Cepat</h4>
+        <h4 style='color: #4FC3F7; margin-bottom: 0.5rem;'>📖 Panduan Cepat</h4>
         <p style='font-size: 0.9rem; line-height: 1.6;'>
             1. Pilih kamera yang sesuai<br>
             2. Klik tombol MULAI ANALISIS<br>
@@ -224,14 +224,125 @@ st.sidebar.markdown("""
             4. Lakukan squat dengan benar
         </p>
     </div>
-""", unsafe_allow_html=True)
-
-# --- FUNGSI UTAMA ---
-def main():
-    # Header
+""", unsafe_allow_html=True)# --- FUNGSI UTAMA ---
+def home_page():
     st.markdown("""
         <div class='main-header'>
             <h1>🏋️ Smart Biomechanical Squat Assistant</h1>
+            <p>Selamat datang di aplikasi analisis gerakan squat berbasis AI</p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""
+        <div style='background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;'>
+            <h2 style='color: #4FC3F7; text-align: center;'>📋 Apa itu Smart Biomechanical Squat Assistant?</h2>
+            <p style='font-size: 1.1rem; line-height: 1.6; color: white;'>
+                Aplikasi ini adalah alat canggih yang menggunakan kecerdasan buatan (AI) untuk menganalisis gerakan squat Anda secara real-time. 
+                Dengan bantuan kamera dan algoritma computer vision, aplikasi ini dapat mendeteksi postur tubuh, menghitung repetisi, 
+                dan memberikan feedback langsung untuk membantu Anda melakukan squat dengan teknik yang benar.
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+            <div style='background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem;'>
+                <h3 style='color: #FFD700;'>🎯 Fitur Utama</h3>
+                <ul style='color: white; font-size: 1rem; line-height: 1.8;'>
+                    <li>Analisis real-time gerakan squat</li>
+                    <li>Deteksi sudut lutut dan punggung</li>
+                    <li>Penghitungan repetisi otomatis</li>
+                    <li>Feedback visual dan teks</li>
+                    <li>Visualisasi pose dengan MediaPipe</li>
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+            <div style='background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem;'>
+                <h3 style='color: #FFD700;'>💡 Manfaat</h3>
+                <ul style='color: white; font-size: 1rem; line-height: 1.8;'>
+                    <li>Mencegah cedera saat berolahraga</li>
+                    <li>Meningkatkan teknik squat yang benar</li>
+                    <li>Pelatihan tanpa instruktur</li>
+                    <li>Monitoring progress latihan</li>
+                    <li>Cocok untuk pemula dan mahir</li>
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("""
+        <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%); border-radius: 15px;'>
+            <h3 style='color: white; margin-bottom: 1rem;'>🚀 Siap Memulai?</h3>
+            <p style='color: #E0E0E0; font-size: 1.1rem;'>Pilih menu "Analisis Squat" di sidebar untuk mulai menggunakan aplikasi</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+def credit_page():
+    st.markdown("""
+        <div class='main-header'>
+            <h1>👥 Credits</h1>
+            <p>Tim pengembang di balik Smart Biomechanical Squat Assistant</p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""
+        <div style='background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;'>
+            <h2 style='color: #4FC3F7;'>Terima Kasih Kepada Tim Pengembang</h2>
+            <p style='font-size: 1.1rem; color: white;'>Aplikasi ini dibuat oleh mahasiswa PCD (Pengolahan Citra Digital) sebagai bagian dari tugas akhir semester.</p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+            <div style='background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%); padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'>
+                <h3 style='color: white; margin-bottom: 0.5rem;'>Adrian Pratama Sasmita</h3>
+                <p style='color: #E0E0E0; font-size: 1rem;'>NIM: 231524043</p>
+                <p style='color: #FFD700; font-size: 0.9rem;'>👨‍💻 Developer</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+            <div style='background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%); padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'>
+                <h3 style='color: white; margin-bottom: 0.5rem;'>Fanza Atsila Fizarli</h3>
+                <p style='color: #E0E0E0; font-size: 1rem;'>NIM: 231524043</p>
+                <p style='color: #FFD700; font-size: 0.9rem;'>🎨 UI/UX Designer</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown("""
+            <div style='background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%); padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'>
+                <h3 style='color: white; margin-bottom: 0.5rem;'>Luthfi Satrio Wicaksono</h3>
+                <p style='color: #E0E0E0; font-size: 1rem;'>NIM: 231524049</p>
+                <p style='color: #FFD700; font-size: 0.9rem;'>🔧 System Architect</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("""
+        <div style='background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; text-align: center;'>
+            <h3 style='color: #4FC3F7;'>📚 Teknologi yang Digunakan</h3>
+            <div style='display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;'>
+                <span style='background: #0068C9; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;'>Streamlit</span>
+                <span style='background: #0068C9; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;'>OpenCV</span>
+                <span style='background: #0068C9; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;'>MediaPipe</span>
+                <span style='background: #0068C9; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;'>NumPy</span>
+                <span style='background: #0068C9; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;'>Python</span>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+def analysis_page():
+    # Header
+    st.markdown("""
+        <div class='main-header'>
+            <h1>🏋️ Analisis Squat Real-Time</h1>
             <p>Analisis gerakan squat Anda secara real-time dengan AI</p>
         </div>
     """, unsafe_allow_html=True)
@@ -417,7 +528,7 @@ def main():
     # Footer
     st.markdown("---")
     st.markdown("""
-        <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px;'>
+        <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, #0068C9 0%, #4FC3F7 100%); border-radius: 15px;'>
             <h3 style='color: white; margin-bottom: 1rem;'>💡 Tips untuk Squat yang Sempurna</h3>
             <div style='display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;'>
                 <div style='flex: 1; min-width: 200px; background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px;'>
@@ -435,6 +546,40 @@ def main():
             </div>
         </div>
     """, unsafe_allow_html=True)
+
+def main():
+    # Navigation buttons above sidebar
+    st.markdown("""
+        <div style='display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 15px;'>
+    """, unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        if st.button("🏠 Beranda", use_container_width=True):
+            st.session_state.page = "home"
+    
+    with col2:
+        if st.button("🏋️ Analisis Squat", use_container_width=True):
+            st.session_state.page = "analysis"
+    
+    with col3:
+        if st.button("👥 Credits", use_container_width=True):
+            st.session_state.page = "credits"
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+    
+    # Initialize page state
+    if 'page' not in st.session_state:
+        st.session_state.page = "home"
+    
+    # Display selected page
+    if st.session_state.page == "home":
+        home_page()
+    elif st.session_state.page == "analysis":
+        analysis_page()
+    elif st.session_state.page == "credits":
+        credit_page()
 
 if __name__ == "__main__":
     main()
